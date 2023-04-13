@@ -1,13 +1,151 @@
 body {
-  background-color: #55595c
+  margin: 0; /* resetear los valores predeterminados de margen */
+  background-color: #55595c;
+  text-align: center;
 }
 
 #main-header {
   background-color: white;
   color: #a70184;
+  /* padding: 5px 0 5px 0; */
+  padding: 5px 0; /* si podemos solo dos valores es: arriba/abajo y izq/der*/
+  margin: 20px 5% 20px 5%;
 }
 
+/* esto viene de los diseñadores */
 .games-container img  {
   height: 180px;
   width: 120px;
+}
+
+/* esto viene de los diseñadores */
+#access-buttons button{
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
+
+#access-buttons {
+  background-color: gray;
+  height: 100px;
+
+  display: flex;
+
+  /* ordenar horizontalmente */
+  /* justify-content: center; */
+  justify-content: space-evenly;
+
+  /* ordenar verticalmente */
+  align-items: center;
+
+  padding: 0 5% 0 5%;
+}
+
+#games-section, #used-games-section {
+  background-color: lightgray;
+}
+
+
+#games-section h2, #used-games-section h2 {
+  color: rgb(71, 71, 71);
+  background-color: white;
+}
+
+.card {
+  background-color: rgb(71, 71, 71);
+  border-radius: 10px;
+  color: white;
+
+  /* los diseñadores quieren las cartas con tamaño especifico */
+  width: 200px;
+  height: 350px;
+
+  display: flex;
+  flex-direction: column;
+
+  /* en flex-direction: column , cambia la orientación de justify-content y align-items */
+  justify-content: center;
+  align-items: center;
+
+}
+
+.games-container {
+
+  display: flex;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
+
+  /* tenemos una propiedad especial que se llama gap */
+  gap: 25px;
+
+  padding: 0 10% 15px 10%;
+
+}
+
+.card-grow {
+  flex-grow: 1;
+}
+
+
+/* POSITIONS */
+/* en un entorno real, los estilos deberian estar juntos en los mismos selectores */
+
+#access-buttons {
+  /* position: fixed; */
+  /* width: auto; */
+  position: sticky;
+  top: 0;
+}
+
+#access-buttons button {
+  position: relative;
+}
+
+#access-buttons span {
+  position: absolute;
+  top: 47px;
+  /* en posicionamiento, right: 0 y left: 0 centra los elementos */
+  right: 0;
+  left: 0;
+}
+
+
+
+/* MEDIA QUERIES */
+
+
+/* los estilos de abajo solo van a aplicar cuando la pantalla sea mayor a 360px de ancho */
+@media (min-width: 360px) {
+
+  body {
+    background-color: #212d37;
+  }
+
+  #access-buttons {
+    justify-content: center;
+    gap: 5px;
+  }
+
+}
+
+@media (min-width: 1080px) {
+
+  body {
+    background-color:#281c26
+  }
+
+  #access-buttons {
+    justify-content: space-evenly;
+  }
+
+  .responsive-container {
+    display: flex;
+    /* align-items: center; */
+    /* width: 800px; */
+    /* justify-content: center; */
+    /* gap: 10% */
+  }
+
 }
