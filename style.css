@@ -1,0 +1,13 @@
+body {
+  background-color: #55595c
+}
+
+#main-header {
+  background-color: white;
+  color: #a70184;
+}
+
+.games-container img  {
+  height: 180px;
+  width: 120px;
+}
